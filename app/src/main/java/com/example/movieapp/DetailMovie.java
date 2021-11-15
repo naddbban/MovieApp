@@ -47,15 +47,15 @@ public class DetailMovie extends AppCompatActivity {
         TextView textViewRelease = findViewById(R.id.release_detail_txt);
         RatingBar ratingBar = findViewById(R.id.ratingbar_detail);
 
-        Glide.with(this)
-                .load(url + imageUrl)
-                .fitCenter()
-                .into(imageView);
+//        Glide.with(this)
+//                .load(url + imageUrl)
+//                .fitCenter()
+//                .into(imageView);
 
         Glide.with(this)
                 .load(url + backdropImage)
                 .fitCenter()
-                .into(imageView1);
+                .into(imageView);
 
         textViewName.setText(movieName);
         textViewDescription.setText(movieDescription);
