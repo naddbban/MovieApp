@@ -22,12 +22,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements MovieAdapter.OnItemClickListener {
-    public static final String EXTRA_URL = "imageUrl";
+    public static final String EXTRA_URL = "img";
     public static final String EXTRA_NAME = "movieName";
     public static final String EXTRA_DESCRIPTION = "movieDescriptiom";
     public static final String EXTRA_RATING = "rating";
     public static final String EXTRA_RELEASE = "release";
-    public static final String EXTRA_RATINGBAR = "ratingBar";
     public static final String EXTRA_URLIMG2 = "imgUrl2";
 
     List<MovieModel> movieList;
@@ -107,8 +106,7 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.OnIt
         detailIntent.putExtra(EXTRA_URL, clickItem.getImg());
         detailIntent.putExtra(EXTRA_RATING, clickItem.getRating());
         detailIntent.putExtra(EXTRA_RELEASE, clickItem.getRelease());
-        detailIntent.putExtra(EXTRA_RATINGBAR, clickItem.getRelease());
-        detailIntent.putExtra(EXTRA_URLIMG2, clickItem.getRelease());
+        detailIntent.putExtra(EXTRA_URLIMG2, clickItem.getImg2());
 
         startActivity(detailIntent);
     }
