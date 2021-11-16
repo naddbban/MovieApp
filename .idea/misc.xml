@@ -5,11 +5,15 @@
       <map>
         <entry key="app/src/main/res/drawable/ic_baseline_star_24.xml" value="0.35833333333333334" />
         <entry key="app/src/main/res/drawable/rating_backgroud.xml" value="0.35833333333333334" />
-        <entry key="app/src/main/res/layout/activity_detail_movie.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_detail_movie.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_setting.xml" value="0.1890625" />
         <entry key="app/src/main/res/layout/data_movie.xml" value="0.19972826086956522" />
         <entry key="app/src/main/res/layout/fragment_movie.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_movie.xml" value="0.5" />
+        <entry key="app/src/main/res/menu/menu.xml" value="0.3421875" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.20520833333333333" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/launcher.xml" value="0.35833333333333334" />
       </map>
     </option>
   </component>

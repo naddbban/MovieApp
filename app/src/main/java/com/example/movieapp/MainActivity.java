@@ -1,12 +1,18 @@
 package com.example.movieapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toolbar;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -31,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.OnIt
 
     List<MovieModel> movieList;
     RecyclerView recyclerView;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +46,8 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.OnIt
 
         movieList = new ArrayList<>();
         recyclerView = findViewById(R.id.recyclerView);
+//
+//        toolbar = (Toolbar) findViewById(R.id.settingToolbar);
 //        recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL,false));
 //
 //        requestQueue = VolleySingleton.getmInstance(this).getRequestQueue();
@@ -51,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.OnIt
 
     private void getData() {
 
-        String url = "https://api.jsonbin.io/b/618dd6084a56fb3dee0da690";
+        String url = "https://nad.my.id/uts.json";
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
@@ -109,6 +118,28 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.OnIt
         detailIntent.putExtra(EXTRA_URLIMG2, clickItem.getImg2());
 
         startActivity(detailIntent);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu,menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.settingToolbar: {
+                Intent intent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
+                startActivity(intent);
+
+                return true;
+            }
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
     }
 }
 
