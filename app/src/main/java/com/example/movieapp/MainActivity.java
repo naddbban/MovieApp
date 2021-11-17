@@ -5,14 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toolbar;
+import android.widget.Button;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -30,14 +31,15 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements MovieAdapter.OnItemClickListener {
     public static final String EXTRA_URL = "img";
     public static final String EXTRA_NAME = "movieName";
-    public static final String EXTRA_DESCRIPTION = "movieDescriptiom";
+    public static final String EXTRA_DESCRIPTION = "movieDescription";
     public static final String EXTRA_RATING = "rating";
     public static final String EXTRA_RELEASE = "release";
     public static final String EXTRA_URLIMG2 = "imgUrl2";
 
     List<MovieModel> movieList;
     RecyclerView recyclerView;
-    Toolbar toolbar;
+    Dialog dialog;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,14 +48,9 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.OnIt
 
         movieList = new ArrayList<>();
         recyclerView = findViewById(R.id.recyclerView);
-//
-//        toolbar = (Toolbar) findViewById(R.id.settingToolbar);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL,false));
-//
-//        requestQueue = VolleySingleton.getmInstance(this).getRequestQueue();
+        //button = (Button) findViewById(R.id.btn_cek);
 
-//        GetData getData = new GetData();
-//        getData.execute();
+        //ShowPopup();
         getData();
 
     }
@@ -81,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.OnIt
                             float ratingbar = (float) jsonObject1.getDouble("vote_average");
                             String img2 = jsonObject1.getString("backdrop_path");
 
-                            movieList.add(new MovieModel(movie, description, img, rating,release, ratingbar, img2));
+                            movieList.add(new MovieModel(movie, description, img, rating, release, ratingbar, img2));
                         }
                         MovieAdapter movieAdapter = new MovieAdapter(MainActivity.this, movieList);
                         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this, RecyclerView.VERTICAL, false));
@@ -120,25 +117,99 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.OnIt
         startActivity(detailIntent);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu,menu);
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.menu,menu);
+//
+//        return super.onCreateOptionsMenu(menu);
+//    }
+//
+////    public void ShowPopup(View view) {
+////        dialog.setContentView(R.layout.activity_pop_up);
+////    }
+////
+//    @Override
+//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//        switch (item.getItemId()){
+//            case R.id.settingToolbar: {
+//                Intent intent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
+//                startActivity(intent);
+//
+//                return true;
+//            }
+//            default:
+//                return super.onOptionsItemSelected(item);
+//        }
+//
+//    }
 
-        return super.onCreateOptionsMenu(menu);
+    public void ShowPopupAccount(View v) {
+
+        dialog = new Dialog(MainActivity.this);
+        dialog.setContentView(R.layout.activity_account);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.setCancelable(true);
+        dialog.show();
+
+        //btn_lang = (Button) dialog.findViewById(R.id.lang);
+        //btn_about = (Button) dialog.findViewById(R.id.about);
+
+//        btn_lang.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
+//                startActivity(intent);
+//            }
+//        });
+//
+//        btn_about.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this, PopUp.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.settingToolbar: {
+    public void ShowPopupSetting(View v) {
+        Button btn_lang;
+        Button btn_about;
+
+        dialog = new Dialog(MainActivity.this);
+        dialog.setContentView(R.layout.activity_pop_up);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.setCancelable(true);
+
+        btn_lang = (Button) dialog.findViewById(R.id.lang);
+        btn_about = (Button) dialog.findViewById(R.id.about);
+
+        btn_lang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 Intent intent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
                 startActivity(intent);
-
-                return true;
             }
-            default:
-                return super.onOptionsItemSelected(item);
-        }
+        });
+
+        btn_about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PopUp.class);
+                startActivity(intent);
+            }
+        });
+
+
+        dialog.show();
+
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                dialog.show();
+//            }
+//        });
+
+
 
     }
 }

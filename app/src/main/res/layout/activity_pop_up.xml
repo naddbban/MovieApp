@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="250dp"
+    android:layout_height="185dp"
+    android:background="@drawable/background"
+    android:layout_gravity="center"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SETTING"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="70px"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/lang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:text="Language"
+        android:padding="10px"
+        android:textColor="@color/black"
+        />
+
+    <Button
+        android:id="@+id/about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:text="About"
+        android:padding="10px"
+        android:textColor="@color/black"
+        />
+
+
+</LinearLayout>

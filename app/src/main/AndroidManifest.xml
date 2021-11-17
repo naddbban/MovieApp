@@ -12,8 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MovieApp">
         <activity
-            android:name=".Setting"
-            android:exported="false" />
+            android:name=".PopUp"
+            android:exported="false">
+        </activity>
         <activity
             android:name=".DetailMovie"
             android:exported="false" />

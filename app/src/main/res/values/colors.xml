@@ -7,4 +7,15 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="white1">#FFFFFF</color>
+    <color name="vintage1">#C9CCD5</color>
+    <color name="vintage2">#CE99A8B2</color>
+    <color name="vintage3">#1C1B1A</color>
+    <color name="vintage4">#DDCCCCCC</color>
+    <color name="vintage5">#CCCCCC</color>
+    <color name="yellow">#F0A500</color>
+    <color name="duskYellow">#FFA300</color>
+    <color name="lighGrey">#d3d3d3</color>
+    <color name="transparan">#00FFFFFF</color>
+
 </resources>
