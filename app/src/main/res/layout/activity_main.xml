@@ -10,27 +10,27 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         android:background="@color/vintage3"
         android:orientation="horizontal">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:layout_gravity="start"
             android:orientation="vertical">
 
-
-
             <de.hdodenhof.circleimageview.CircleImageView
-                android:onClick="ShowPopupAccount"
+                style="@style/gear"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_alignParentStart="true"
-                android:layout_marginStart="2dp"
-                android:padding="10dp"
-                style="@style/gear"
-                android:src="@drawable/fotoku"/>
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="11dp"
+                android:onClick="ShowPopupAccount"
+                android:padding="5dp"
+                android:src="@drawable/fotoku" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -40,17 +40,17 @@
                 android:textColor="@color/vintage4"
                 android:textSize="21sp" />
 
-            <ImageView
-                android:onClick="ShowPopupSetting"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_alignParentEnd="true"
-                android:layout_gravity="end"
-                android:layout_marginEnd="2dp"
-                android:foregroundGravity="center"
-                style="@style/gear"
-                android:padding="10dp"
-                android:src="@drawable/ic_baseline_settings_24" />
+<!--            <ImageView-->
+<!--                style="@style/gear"-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:layout_gravity="end"-->
+<!--                android:layout_marginEnd="2dp"-->
+<!--                android:foregroundGravity="center"-->
+<!--                android:onClick="ShowPopupSetting"-->
+<!--                android:padding="10dp"-->
+<!--                android:src="@drawable/ic_baseline_settings_24" />-->
 
         </RelativeLayout>
 

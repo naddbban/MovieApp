@@ -1,11 +1,11 @@
 package com.example.movieapp;
 
+import static com.example.movieapp.MainActivity.EXTRA_BACKDROPIMAGE;
 import static com.example.movieapp.MainActivity.EXTRA_DESCRIPTION;
 import static com.example.movieapp.MainActivity.EXTRA_NAME;
+import static com.example.movieapp.MainActivity.EXTRA_POSTERIMAGE;
 import static com.example.movieapp.MainActivity.EXTRA_RATING;
 import static com.example.movieapp.MainActivity.EXTRA_RELEASE;
-import static com.example.movieapp.MainActivity.EXTRA_URL;
-import static com.example.movieapp.MainActivity.EXTRA_URLIMG2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -27,12 +27,12 @@ public class DetailMovie extends AppCompatActivity {
         setContentView(R.layout.activity_detail_movie);
 
         Intent intent = getIntent();
-        String imageUrl = intent.getStringExtra(EXTRA_URL);
+        String imageUrl = intent.getStringExtra(EXTRA_POSTERIMAGE);
         String movieName = intent.getStringExtra(EXTRA_NAME);
         String movieDescription = intent.getStringExtra(EXTRA_DESCRIPTION);
         String rating = intent.getStringExtra(EXTRA_RATING);
         String release = intent.getStringExtra(EXTRA_RELEASE);
-        String backdropImage = intent.getStringExtra(EXTRA_URLIMG2);
+        String backdropImage = intent.getStringExtra(EXTRA_BACKDROPIMAGE);
         float ratingbar = Float.parseFloat(rating);
 
         ImageView imageView = findViewById(R.id.image_view_detail);

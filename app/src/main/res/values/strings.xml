@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">Movie</string>
     <string name="rilis">Release : </string>
+    <string name="lang">Language</string>
+    <string name="contact">Contact</string>
+    <string name="about_me">About Me</string>
+    <string name="name">Name</string>
+    <string name="classs">Class</string>
+    <string name="Nama">Muhammad Husni Anas</string>
+    <string name="Nim">19.11.2845</string>
+    <string name="Kelas">19 Informatika 04</string>
 </resources>

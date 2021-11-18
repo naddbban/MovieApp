@@ -1,6 +1,6 @@
 package com.example.movieapp;
 
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,7 +13,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -29,17 +29,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements MovieAdapter.OnItemClickListener {
-    public static final String EXTRA_URL = "img";
-    public static final String EXTRA_NAME = "movieName";
-    public static final String EXTRA_DESCRIPTION = "movieDescription";
-    public static final String EXTRA_RATING = "rating";
-    public static final String EXTRA_RELEASE = "release";
-    public static final String EXTRA_URLIMG2 = "imgUrl2";
+    public static final String EXTRA_POSTERIMAGE = "Img poster";
+    public static final String EXTRA_BACKDROPIMAGE = "Img Backdrop";
+    public static final String EXTRA_NAME = "Movie Name";
+    public static final String EXTRA_DESCRIPTION = "Movie Description";
+    public static final String EXTRA_RATING = "Rating";
+    public static final String EXTRA_RELEASE = "Release";
 
     List<MovieModel> movieList;
     RecyclerView recyclerView;
     Dialog dialog;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,11 +47,8 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.OnIt
 
         movieList = new ArrayList<>();
         recyclerView = findViewById(R.id.recyclerView);
-        //button = (Button) findViewById(R.id.btn_cek);
 
-        //ShowPopup();
         getData();
-
     }
 
     private void getData() {
@@ -109,13 +105,55 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.OnIt
 
         detailIntent.putExtra(EXTRA_NAME, clickItem.getMovieName());
         detailIntent.putExtra(EXTRA_DESCRIPTION, clickItem.getMovieDescription());
-        detailIntent.putExtra(EXTRA_URL, clickItem.getImg());
+        detailIntent.putExtra(EXTRA_POSTERIMAGE, clickItem.getImg());
         detailIntent.putExtra(EXTRA_RATING, clickItem.getRating());
         detailIntent.putExtra(EXTRA_RELEASE, clickItem.getRelease());
-        detailIntent.putExtra(EXTRA_URLIMG2, clickItem.getImg2());
+        detailIntent.putExtra(EXTRA_BACKDROPIMAGE, clickItem.getImg2());
 
         startActivity(detailIntent);
     }
+
+    public void ShowPopupAccount(View v) {
+        TextView lang;
+        TextView about;
+
+        dialog = new Dialog(MainActivity.this);
+        dialog.setContentView(R.layout.activity_account);
+        lang = (TextView) dialog.findViewById(R.id.language);
+        about = (TextView) dialog.findViewById(R.id.aboutMe);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.setCancelable(true);
+        dialog.show();
+
+        lang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
+                startActivity(intent);
+            }
+        });
+
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog = new Dialog(MainActivity.this);
+                dialog.setContentView(R.layout.activity_about);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.setCancelable(true);
+                dialog.show();
+            }
+        });
+    }
+}
+
+
+
+
+
+
+
+
+
 
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {
@@ -142,82 +180,6 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.OnIt
 //        }
 //
 //    }
-
-    public void ShowPopupAccount(View v) {
-
-        dialog = new Dialog(MainActivity.this);
-        dialog.setContentView(R.layout.activity_account);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        dialog.setCancelable(true);
-        dialog.show();
-
-        //btn_lang = (Button) dialog.findViewById(R.id.lang);
-        //btn_about = (Button) dialog.findViewById(R.id.about);
-
-//        btn_lang.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
-//                startActivity(intent);
-//            }
-//        });
-//
-//        btn_about.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this, PopUp.class);
-//                startActivity(intent);
-//            }
-//        });
-    }
-
-    public void ShowPopupSetting(View v) {
-        Button btn_lang;
-        Button btn_about;
-
-        dialog = new Dialog(MainActivity.this);
-        dialog.setContentView(R.layout.activity_pop_up);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        dialog.setCancelable(true);
-
-        btn_lang = (Button) dialog.findViewById(R.id.lang);
-        btn_about = (Button) dialog.findViewById(R.id.about);
-
-        btn_lang.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
-                startActivity(intent);
-            }
-        });
-
-        btn_about.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, PopUp.class);
-                startActivity(intent);
-            }
-        });
-
-
-        dialog.show();
-
-//        button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                dialog.show();
-//            }
-//        });
-
-
-
-    }
-}
-
-
-
-
-
 
 //            @Override
 //            public void onResponse(String response) {

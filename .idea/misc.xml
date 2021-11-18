@@ -4,21 +4,25 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/background.xml" value="0.3609375" />
+        <entry key="app/src/main/res/drawable/bg_color.xml" value="0.2677083333333333" />
         <entry key="app/src/main/res/drawable/ic_baseline_account.xml" value="0.3609375" />
+        <entry key="app/src/main/res/drawable/ic_baseline_keyboard_arrow_right_24.xml" value="0.2677083333333333" />
         <entry key="app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.3609375" />
         <entry key="app/src/main/res/drawable/ic_baseline_star_24.xml" value="0.35833333333333334" />
         <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.3609375" />
         <entry key="app/src/main/res/drawable/rating_backgroud.xml" value="0.35833333333333334" />
-        <entry key="app/src/main/res/layout/activity_account.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/about.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_account.xml" value="0.625" />
         <entry key="app/src/main/res/layout/activity_acoount.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_detail_movie.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.5864453665283541" />
-        <entry key="app/src/main/res/layout/activity_pop_up.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/activity_pop_up.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_setting.xml" value="0.1890625" />
         <entry key="app/src/main/res/layout/cek.xml" value="0.19114583333333332" />
         <entry key="app/src/main/res/layout/data_movie.xml" value="0.19972826086956522" />
         <entry key="app/src/main/res/layout/fragment_movie.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/item_movie.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/item2.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/item_movie.xml" value="0.375" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.3421875" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.20520833333333333" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/launcher.xml" value="0.35833333333333334" />
