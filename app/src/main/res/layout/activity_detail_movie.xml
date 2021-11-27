@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/vintage4"
     tools:context=".DetailMovie">
 
     <ImageView
@@ -48,6 +49,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:theme="@style/RatingBar"
                     android:layout_marginTop="20px"
                     android:layout_marginStart="16dp"/>
 

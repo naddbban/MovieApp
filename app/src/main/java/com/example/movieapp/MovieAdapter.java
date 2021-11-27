@@ -16,7 +16,7 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder> {
-    private Context mContext;
+     private Context mContext;
      private List<MovieModel> mData;
      private static OnItemClickListener mListener;
 

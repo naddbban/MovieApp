@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.OnIt
     private void getData() {
 
         String url = "https://nad.my.id/uts.json";
+//        String url = "https://api.jsonbin.io/b/618dd6084a56fb3dee0da690";
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
@@ -145,6 +146,9 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.OnIt
         });
     }
 }
+
+
+
 
 
 
